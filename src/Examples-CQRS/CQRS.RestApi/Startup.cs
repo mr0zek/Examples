@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using CQRS.Application.Base;
 using CQRS.Application.Contract;
 using CQRS.Application.Handlers;
 using CQRS.Finders;
 using CQRS.Infrastructure;
+using CQRS.RestApi.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using StructureMap;
 
 namespace CQRS.RestApi
 {
@@ -34,25 +36,25 @@ namespace CQRS.RestApi
       // Add framework services.
       services.AddMvc();
 
-      var container = new Container();
-
-      container.Configure(config =>
+      services.AddLogging(loggingBuilder =>
       {
-        config.For<IContainer>().Use(container);
-        config.AddRegistry(new StructuremapRegistry());
-        config.Populate(services);
+        loggingBuilder
+          .AddConsole()
+          .AddConfiguration(Configuration.GetSection("logging"))
+          .AddDebug();
       });
 
-      return container.GetInstance<IServiceProvider>();
+      var builder = new ContainerBuilder();
+      builder.RegisterModule<MainModule>();
+      builder.RegisterSelf();
+      builder.Populate(services);
+      var container = builder.Build();
+      return new AutofacServiceProvider(container);
     }  
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     {
-      loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-      loggerFactory.AddDebug();
-
-
       if (env.IsDevelopment())
       {
         app.UseDeveloperExceptionPage();

@@ -7,13 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS.RestApi", "CQRS.RestAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.WCF", "CQRS.WCF\CQRS.WCF.csproj", "{03E509FF-E9F0-4DDE-8ECA-2D5EA62E06EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.Application", "CQRS.Application\CQRS.Application.csproj", "{9A330490-CAED-45C1-8677-E85A9C9F29FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS.Application", "CQRS.Application\CQRS.Application.csproj", "{9A330490-CAED-45C1-8677-E85A9C9F29FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.Domain", "CQRS.Domain\CQRS.Domain.csproj", "{5DAC18C5-C95A-4FBE-9300-6F6EBE987BD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS.Domain", "CQRS.Domain\CQRS.Domain.csproj", "{5DAC18C5-C95A-4FBE-9300-6F6EBE987BD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.Infrastructure", "CQRS.Infrastructure\CQRS.Infrastructure.csproj", "{A25BF808-CD15-4CCB-9B65-253A601B9F47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS.Infrastructure", "CQRS.Infrastructure\CQRS.Infrastructure.csproj", "{A25BF808-CD15-4CCB-9B65-253A601B9F47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.Finders", "CQRS.Finders\CQRS.Finders.csproj", "{372772DD-F1FC-46AF-9AA4-AB2B07849267}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS.Finders", "CQRS.Finders\CQRS.Finders.csproj", "{372772DD-F1FC-46AF-9AA4-AB2B07849267}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

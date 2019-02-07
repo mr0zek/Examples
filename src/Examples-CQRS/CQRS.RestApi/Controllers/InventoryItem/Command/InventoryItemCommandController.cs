@@ -1,5 +1,6 @@
 ﻿using System;
 using CQRS.Application.Base;
+using CQRS.Application.Contract;
 using CQRS.RestApi.Infrastructure;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
