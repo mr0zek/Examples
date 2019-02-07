@@ -13,7 +13,7 @@ namespace AOP.ImpromptuInterface
     public void Aspect_should_ceate_transaction_around_handle_method()
     {
       // Arrange
-      ICommandHandler<MyCommand> command = LoggingAspect<ICommandHandler<MyCommand>>.Create(new MyCommanHandler());
+      ICommandHandler<MyCommand> command = TransactionAspect<ICommandHandler<MyCommand>>.Create(new MyCommanHandler());
 
       // Act, Assert
       Assert.DoesNotThrow(() => command.Handle(new MyCommand()));
