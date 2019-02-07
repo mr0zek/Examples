@@ -6,19 +6,19 @@ using ImpromptuInterface;
 
 namespace AOP.ImpromptuInterface
 {
-  public class LoggingAspect<T> : DynamicObject
+  public class TransactionAspect<T> : DynamicObject
     where T : class
   {
     private readonly T _decorated;
     
-    private LoggingAspect(T decorated)
+    private TransactionAspect(T decorated)
     {
       _decorated = decorated;
     }
 
     public static T Create(T decorated)
     {
-      return new LoggingAspect<T>(decorated).ActLike<T>();
+      return new TransactionAspect<T>(decorated).ActLike<T>();
     }
 
     public override bool TryInvokeMember(InvokeMemberBinder binder, object[] args, out object result)
