@@ -1,14 +1,12 @@
-﻿using DDD.DomainEvents.DelayedPublishing;
-using DDD.Infrastructure.Base;
-using NUnit.Framework;
+﻿using Xunit;
 using System.Linq;
 
 namespace DDD.DomainEvents.InstantPublishing
 {
-  [TestFixture]
+  
   public class DomainEventsTest
   {
-    [Test]
+    [Fact]
     public void Accept_should_generate_DocumentAcceptedEvent()
     {
       FakeEventPublisher domainEventPublisher = new FakeEventPublisher();
@@ -19,8 +17,8 @@ namespace DDD.DomainEvents.InstantPublishing
 
       var events = domainEventPublisher.UnpublishedEvents;
 
-      Assert.IsTrue(events.Count() == 1);
-      Assert.IsTrue(events.First().GetType() == typeof(DocumentAccepted));
+      Assert.True(events.Count() == 1);
+      Assert.True(events.First().GetType() == typeof(DocumentAccepted));
     }
   }
 }

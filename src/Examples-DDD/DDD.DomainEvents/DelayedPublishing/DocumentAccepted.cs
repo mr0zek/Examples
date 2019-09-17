@@ -1,6 +1,4 @@
-﻿using DDD.Base.Domain;
-
-namespace DDD.DomainEvents.DelayedPublishing
+﻿namespace DDD.DomainEvents.DelayedPublishing
 {
   public class DocumentAccepted : IDomainEvent
   {

@@ -1,5 +1,5 @@
 ﻿using Automatonymous;
-using DDD.Infrastructure.Base.Sagas;
+using DDD.Sagas.Base;
 
 namespace DDD.Sagas
 {

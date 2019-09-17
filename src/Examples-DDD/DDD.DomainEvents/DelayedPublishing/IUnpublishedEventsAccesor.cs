@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using DDD.Base.Domain;
 
 namespace DDD.DomainEvents.DelayedPublishing
 {

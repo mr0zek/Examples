@@ -1,6 +1,4 @@
-﻿using DDD.Examples.Common;
-
-namespace DDD.Policy
+﻿namespace DDD.Policy
 {
   public class BWCostCalculator : ICostCalculatorPolicy
   {

@@ -1,5 +1,4 @@
-﻿using DDD.Base.Domain;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace DDD.DomainEvents.EventSourcing
@@ -37,6 +36,16 @@ namespace DDD.DomainEvents.EventSourcing
 
     public Document3()
     {
+    }
+
+    public Document3(IEnumerable<IDomainEvent> events) 
+    {
+      LoadFromHistory(events);
+    }
+
+    public bool SameAs(Document3 d2)
+    {
+      return _status == d2._status && Id == d2.Id && Version == d2.Version;
     }
   }
 }

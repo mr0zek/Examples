@@ -1,6 +1,4 @@
-﻿using DDD.Base.Domain;
-
-namespace DDD.DomainEvents.EventSourcing
+﻿namespace DDD.DomainEvents.EventSourcing
 {
   public class DocumentCreated : IDomainEvent
   {

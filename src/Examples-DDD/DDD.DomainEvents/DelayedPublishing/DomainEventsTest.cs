@@ -1,13 +1,11 @@
-﻿using DDD.Base.Domain;
-using NUnit.Framework;
-using System.Linq;
+﻿using System.Linq;
+using Xunit;
 
 namespace DDD.DomainEvents.DelayedPublishing
 {
-  [TestFixture]
   public class DomainEventsTest
   {
-    [Test]
+    [Fact]
     public void Accept_should_generate_DocumentAcceptedEvent()
     {
       Document d = new Document();
@@ -15,8 +13,8 @@ namespace DDD.DomainEvents.DelayedPublishing
 
       var events = (d as IUnpublishedEventsAccesor).GetUnpublishedEvents();
 
-      Assert.IsTrue(events.Count() == 1);
-      Assert.IsTrue(events.First().GetType() == typeof(DocumentAccepted));
+      Assert.True(events.Count() == 1);
+      Assert.True(events.First().GetType() == typeof(DocumentAccepted));
     }
   }
 }

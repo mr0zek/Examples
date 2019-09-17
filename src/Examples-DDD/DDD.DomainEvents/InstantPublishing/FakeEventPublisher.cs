@@ -1,4 +1,3 @@
-using DDD.Base.Domain;
 using System.Collections.Generic;
 
 namespace DDD.DomainEvents.InstantPublishing

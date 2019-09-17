@@ -1,4 +1,4 @@
-﻿using DDD.Base.SharedKernel.Specification;
+﻿using DDD.Specification.Base;
 
 namespace DDD.Specification
 {

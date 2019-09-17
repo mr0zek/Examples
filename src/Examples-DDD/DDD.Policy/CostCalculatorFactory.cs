@@ -1,10 +1,19 @@
-﻿namespace DDD.Policy
+﻿using Microsoft.Extensions.Configuration;
+
+namespace DDD.Policy
 {
   public class CostCalculatorFactory
   {
-    public static ICostCalculatorPolicy Create()
+    private readonly IConfiguration _configuration;
+
+    public CostCalculatorFactory(IConfiguration configuration)
     {
-      string value = System.Configuration.ConfigurationManager.AppSettings["KindOfPrints"];
+      _configuration = configuration;
+    }
+
+    public ICostCalculatorPolicy Create()
+    {
+      string value = _configuration["KindOfPrints"];
       if (value == "BW")
       {
         return new BWCostCalculator();

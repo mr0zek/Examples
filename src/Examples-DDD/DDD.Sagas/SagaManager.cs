@@ -1,4 +1,4 @@
-﻿using DDD.Infrastructure.Base.Sagas;
+﻿using DDD.Sagas.Base;
 using DDD.Sagas.Commands;
 using DDD.Sagas.Events;
 

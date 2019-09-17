@@ -1,6 +1,4 @@
-﻿using DDD.Examples.Common;
-
-namespace DDD.Policy
+﻿namespace DDD.Policy
 {
   public class ColorCostCalculator : ICostCalculatorPolicy
   {

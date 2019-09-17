@@ -1,6 +1,4 @@
-﻿using DDD.Examples.Common;
-
-namespace DDD.Policy.MethodInjection
+﻿namespace DDD.Policy.MethodInjection
 {
   public class Document
   {

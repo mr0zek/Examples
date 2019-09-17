@@ -15,7 +15,8 @@ namespace AOP.Remoting
     [Test]
     public void Proxy()
     {
-      ICommandHandler<MyCommand> commandHandler = LoggingProxy<ICommandHandler<MyCommand>>.Create(new MyCommanHandler());
+      ICommandHandler<MyCommand> commandHandler 
+        = LoggingProxy<ICommandHandler<MyCommand>>.Create(new MyCommanHandler());
 
       commandHandler.Handle(new MyCommand());
     }

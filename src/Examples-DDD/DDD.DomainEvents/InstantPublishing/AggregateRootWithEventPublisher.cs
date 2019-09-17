@@ -1,9 +1,4 @@
-﻿using DDD.Base.Domain;
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-
-namespace DDD.DomainEvents.InstantPublishing
+﻿namespace DDD.DomainEvents.InstantPublishing
 {
   public class AggregateRootWithEventPublisher
   {

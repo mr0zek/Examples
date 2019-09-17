@@ -1,13 +1,13 @@
-﻿using NUnit.Framework;
+﻿using Xunit;
 using System;
-using DDD.Base.SharedKernel.Specification;
+using DDD.Specification.Base;
 
 namespace DDD.Specification
 {
-  [TestFixture]
+  
   public class _Test
   {
-    [Test]
+    [Fact]
     public void RockersSpecificationExample()
     {
       ISpecification<User> grandpaRockersSpecification =
@@ -20,7 +20,7 @@ namespace DDD.Specification
 
       bool result = grandpaRockersSpecification.IsSatisfiedBy(GetCurrentUser());
 
-      Assert.IsTrue(result);
+      Assert.True(result);
     }
 
     private User GetCurrentUser()
