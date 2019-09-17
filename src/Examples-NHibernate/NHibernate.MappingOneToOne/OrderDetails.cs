@@ -12,6 +12,6 @@ namespace NHibernate.Mapping.ByStrings
     public OrderDetails(Order order)
     {
       Order = order;      
-    }
+    } 
   }
 }
