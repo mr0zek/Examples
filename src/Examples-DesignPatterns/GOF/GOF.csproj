@@ -60,6 +60,31 @@
     <Compile Include="Behavioral\ChainOfResponsibility\Example2\RemoveCommandProcessor.cs" />
     <Compile Include="Behavioral\ChainOfResponsibility\Example2\Response.cs" />
     <Compile Include="Behavioral\ChainOfResponsibility\Example2\_Test.cs" />
+    <Compile Include="Behavioral\Command\Example1\ICommand.cs" />
+    <Compile Include="Behavioral\Command\Example1\Light.cs" />
+    <Compile Include="Behavioral\Command\Example1\TurnOnCommand.cs" />
+    <Compile Include="Behavioral\Command\Example1\_Test.cs" />
+    <Compile Include="Behavioral\Interpreter\PolishNotationExample\Context.cs" />
+    <Compile Include="Behavioral\Interpreter\PolishNotationExample\IExpression.cs" />
+    <Compile Include="Behavioral\Interpreter\PolishNotationExample\IntegerExpression.cs" />
+    <Compile Include="Behavioral\Interpreter\PolishNotationExample\MinusExpression.cs" />
+    <Compile Include="Behavioral\Interpreter\PolishNotationExample\Parser.cs" />
+    <Compile Include="Behavioral\Interpreter\PolishNotationExample\PlusExpression.cs" />
+    <Compile Include="Behavioral\Interpreter\PolishNotationExample\_Test.cs" />
+    <Compile Include="Behavioral\Interpreter\RomanNumbersExample\AbstractExpression.cs" />
+    <Compile Include="Behavioral\Interpreter\RomanNumbersExample\Context.cs" />
+    <Compile Include="Behavioral\Interpreter\RomanNumbersExample\HundredExpression.cs" />
+    <Compile Include="Behavioral\Interpreter\RomanNumbersExample\IExpression.cs" />
+    <Compile Include="Behavioral\Interpreter\RomanNumbersExample\OneExpression.cs" />
+    <Compile Include="Behavioral\Interpreter\RomanNumbersExample\RomanDateParser.cs" />
+    <Compile Include="Behavioral\Interpreter\RomanNumbersExample\TenExpression.cs" />
+    <Compile Include="Behavioral\Interpreter\RomanNumbersExample\ThousandExpression.cs" />
+    <Compile Include="Behavioral\Interpreter\RomanNumbersExample\_Test.cs" />
+    <Compile Include="Behavioral\Memento\Exmaple1\EditorCtrl.cs" />
+    <Compile Include="Behavioral\Memento\Exmaple1\Memento.cs" />
+    <Compile Include="Behavioral\Memento\Exmaple1\NotepadApp.cs" />
+    <Compile Include="Behavioral\Memento\Exmaple1\_Test.cs" />
+    <Compile Include="Behavioral\Observer\Obserevr.cs" />
     <Compile Include="Behavioral\State\Example2\IAtmMachine.cs" />
     <Compile Include="Behavioral\State\Example2\Money.cs" />
     <Compile Include="Behavioral\State\Example2\NoStateAtm\NoStateAtm.cs" />
@@ -76,6 +101,14 @@
     <Compile Include="Behavioral\TemplateMethod\Example1_Game\Chess.cs" />
     <Compile Include="Behavioral\TemplateMethod\Example1_Game\Monopoly.cs" />
     <Compile Include="Behavioral\TemplateMethod\Example1_Game\TurnBaseGame.cs" />
+    <Compile Include="Behavioral\Visitor\Example1\DoubleDispatchProblem.cs" />
+    <Compile Include="Behavioral\Visitor\Example2\Appels.cs" />
+    <Compile Include="Behavioral\Visitor\Example2\IVisitable.cs" />
+    <Compile Include="Behavioral\Visitor\Example2\IVisitor.cs" />
+    <Compile Include="Behavioral\Visitor\Example2\Milk.cs" />
+    <Compile Include="Behavioral\Visitor\Example2\TaxVisitor.cs" />
+    <Compile Include="Behavioral\Visitor\Example2\Vodka.cs" />
+    <Compile Include="Behavioral\Visitor\Example2\_Test.cs" />
     <Compile Include="Creational\Builder\Example1\SqlTableScriptBuilder.cs" />
     <Compile Include="Creational\Builder\Example1\_Test.cs" />
     <Compile Include="Creational\Builder\Example2PizzaBuilder\PizzaBuilder.cs" />
@@ -94,6 +127,21 @@
     <Compile Include="Structural\Adapter\ObjectAdapter\ILogWriter.cs" />
     <Compile Include="Structural\Adapter\ObjectAdapter\Level.cs" />
     <Compile Include="Structural\Adapter\ObjectAdapter\Processor.cs" />
+    <Compile Include="Structural\Bridge\Example1Shapes\AsciiDriver.cs" />
+    <Compile Include="Structural\Bridge\Example1Shapes\Circle.cs" />
+    <Compile Include="Structural\Bridge\Example1Shapes\HdPixelDriver.cs" />
+    <Compile Include="Structural\Bridge\Example1Shapes\IDrawingApi.cs" />
+    <Compile Include="Structural\Bridge\Example1Shapes\MyLogo.cs" />
+    <Compile Include="Structural\Bridge\Example1Shapes\New3DDriver.cs" />
+    <Compile Include="Structural\Bridge\Example1Shapes\Shape.cs" />
+    <Compile Include="Structural\Bridge\Example1Shapes\Squre.cs" />
+    <Compile Include="Structural\Bridge\Example1Shapes\_Test.cs" />
+    <Compile Include="Structural\Bridge\Example2\IMessage.cs" />
+    <Compile Include="Structural\Bridge\Example2\IMessageSender.cs" />
+    <Compile Include="Structural\Bridge\Example2\NewCilentMessage.cs" />
+    <Compile Include="Structural\Bridge\Example2\NewLoginMessage.cs" />
+    <Compile Include="Structural\Bridge\Example2\WelCommeMessage.cs" />
+    <Compile Include="Structural\Bridge\Example2\_Test.cs" />
     <Compile Include="Structural\Composite\Example1\A.cs" />
     <Compile Include="Structural\Composite\Example1\Body.cs" />
     <Compile Include="Structural\Composite\Example1\Div.cs" />
@@ -109,9 +157,17 @@
     <Compile Include="Structural\Decorator\Example1\ThinPizza.cs" />
     <Compile Include="Structural\Decorator\Example1\TomatoSouce.cs" />
     <Compile Include="Structural\Decorator\Example1\_Test.cs" />
+    <Compile Include="Structural\Proxy\Example1\Address.cs" />
+    <Compile Include="Structural\Proxy\Example1\Controller.cs" />
+    <Compile Include="Structural\Proxy\Example1\HttpListener.cs" />
+    <Compile Include="Structural\Proxy\Example1\IService.cs" />
+    <Compile Include="Structural\Proxy\Example1\Service.cs" />
+    <Compile Include="Structural\Proxy\Example1\ServiceProxy.cs" />
+    <Compile Include="Structural\Proxy\Example1\_Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Structural\Bridge\Example1Shapes\ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

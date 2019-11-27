@@ -11,7 +11,9 @@ namespace DDD.DomainEvents.DelayedPublishing
       Document d = new Document();
       d.Accept();
 
+      //_repository.Save(d);
       var events = (d as IUnpublishedEventsAccesor).GetUnpublishedEvents();
+      // publish events
 
       Assert.True(events.Count() == 1);
       Assert.True(events.First().GetType() == typeof(DocumentAccepted));

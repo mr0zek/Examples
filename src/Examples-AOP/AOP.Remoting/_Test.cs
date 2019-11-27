@@ -17,7 +17,7 @@ namespace AOP.Remoting
     {
       ICommandHandler<MyCommand> commandHandler 
         = LoggingProxy<ICommandHandler<MyCommand>>.Create(new MyCommanHandler());
-
+       
       commandHandler.Handle(new MyCommand());
     }
 

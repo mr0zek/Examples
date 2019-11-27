@@ -12,7 +12,7 @@ namespace DDD.DomainEvents.DelayedPublishing
       _eventsToPublish.Add(domainEvent);
     }
 
-    public IEnumerable<IDomainEvent> GetUnpublishedEvents()
+    IEnumerable<IDomainEvent> IUnpublishedEventsAccesor.GetUnpublishedEvents()
     {
       return _eventsToPublish;
     }
