@@ -15,10 +15,15 @@ namespace AOP.Remoting
     [Test]
     public void Proxy()
     {
-      ICommandHandler<MyCommand> commandHandler 
-        = LoggingProxy<ICommandHandler<MyCommand>>.Create(new MyCommanHandler());
+      ICommandHandler<MyCommand> commandHandler  
+        = LoggingProxy<ICommandHandler<MyCommand>>.Create(new MyCommandHandler());
        
       commandHandler.Handle(new MyCommand());
+
+      IFoo f = LoggingProxy<IFoo>.Create(new Foo());
+
+      f.Add();
+      f.Delete();
     }
 
     public interface ICommandHandler<T>
@@ -26,7 +31,7 @@ namespace AOP.Remoting
       void Handle(T obj);
     }
 
-    public class MyCommanHandler : ICommandHandler<MyCommand>
+    public class MyCommandHandler : ICommandHandler<MyCommand>
     {
       public void Handle(MyCommand obj)
       {
@@ -48,7 +53,7 @@ namespace AOP.Remoting
         _instance = instance;
       }
 
-      public static T Create(T instance)
+      public static T Create(T instance) // ICommandHandler<MyCOmmand>
       {
         return (T)new LoggingProxy<T>(instance).GetTransparentProxy();
       }
@@ -76,6 +81,24 @@ namespace AOP.Remoting
           return new ReturnMessage(e, msg as IMethodCallMessage);
         }
       }
+    }
+  }
+
+  public interface IFoo
+  {
+    void Add();
+    void Delete();
+  }
+
+  public class Foo : IFoo
+  {
+    public void Add()
+    {
+      
+    }
+
+    public void Delete()
+    {
     }
   }
 }

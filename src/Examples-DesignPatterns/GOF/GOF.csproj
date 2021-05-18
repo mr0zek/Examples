@@ -157,6 +157,7 @@
     <Compile Include="Structural\Decorator\Example1\ThinPizza.cs" />
     <Compile Include="Structural\Decorator\Example1\TomatoSouce.cs" />
     <Compile Include="Structural\Decorator\Example1\_Test.cs" />
+    <Compile Include="Structural\Decorator\Example2\_Test.cs" />
     <Compile Include="Structural\Proxy\Example1\Address.cs" />
     <Compile Include="Structural\Proxy\Example1\Controller.cs" />
     <Compile Include="Structural\Proxy\Example1\HttpListener.cs" />

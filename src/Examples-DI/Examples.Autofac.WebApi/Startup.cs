@@ -6,6 +6,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Autofac.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Examples.Autofac.WebApi
 {
@@ -13,7 +20,7 @@ namespace Examples.Autofac.WebApi
   {
     public static Action<ContainerBuilder> BuildFunc = f => { };
 
-    public Startup(IHostingEnvironment env)
+    public Startup(Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
     {
       var builder = new ConfigurationBuilder()
           .SetBasePath(env.ContentRootPath)
@@ -24,11 +31,24 @@ namespace Examples.Autofac.WebApi
 
     public IConfigurationRoot Configuration { get; }
 
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
-      loggerFactory.AddConsole(this.Configuration.GetSection("Logging"));
-      loggerFactory.AddDebug();
-      app.UseMvc();
+      if (env.IsDevelopment())
+      {
+        app.UseDeveloperExceptionPage();
+      }
+
+      app.UseHttpsRedirection();
+
+      app.UseRouting();
+
+      app.UseAuthorization();
+
+      app.UseEndpoints(endpoints =>
+      {
+        endpoints.MapControllers();
+      });
+
     }
 
     public void ConfigureContainer(ContainerBuilder builder)

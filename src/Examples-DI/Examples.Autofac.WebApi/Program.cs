@@ -2,6 +2,7 @@
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace Examples.Autofac.WebApi
 {
@@ -15,6 +16,12 @@ namespace Examples.Autofac.WebApi
     public static IWebHost BuildWebHost(string[] args) =>
         WebHost.CreateDefaultBuilder(args)
           .UseKestrel()
+          .ConfigureLogging(logging =>
+          {
+            logging.ClearProviders();
+            logging.AddConsole();
+            logging.AddDebug();
+          })
           .ConfigureServices(services => services.AddAutofac())
           .UseContentRoot(Directory.GetCurrentDirectory())
           .UseIISIntegration()

@@ -11,5 +11,7 @@ namespace DDD.Specification
     public int Age { get; set; }
 
     public MotorbikeType MotorbikeType { get; set; }
+
+    public string Address { get; set; }
   }
 }
